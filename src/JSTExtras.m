@@ -132,6 +132,17 @@
     SetFrontProcess( &xpsn );
 }
 
+
+- (NSInteger) displayDialog:(NSString*)msg withTitle:(NSString*)title withOK:(NSString*)oktxt withNOK:(NSString*)noktxt {
+    
+    NSAlert *alert = [NSAlert alertWithMessageText:title defaultButton:oktxt alternateButton:noktxt otherButton:nil informativeTextWithFormat:@"%@", msg];
+    
+    NSInteger button = [alert runModal];
+    
+    return button;
+}
+
+
 - (NSInteger)displayDialog:(NSString*)msg withTitle:(NSString*) title {
     
     NSAlert *alert = [NSAlert alertWithMessageText:title defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", msg];
